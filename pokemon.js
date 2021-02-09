@@ -38,6 +38,46 @@ let FetchPrevolution = async function (pokemon) {
     } else document.getElementById('prevolution_picture').src = ""
 };
 
+let FetchEvoChain = async function (pokemon) {
+    let source = await fetch(pokemon['species']['url']);
+    let data = await source.json();
+    source = await fetch(data['evolution_chain']['url']);
+    data = await source.json();
+
+    //base form.
+    let base = await FetchData(data['chain']['species']['name'])
+
+    document.getElementById('base').classList.remove('invisible')
+    document.getElementById('base').src = base['sprites']['other']['official-artwork']['front_default']
+
+    if (data['chain']['evolves_to'].length > 0) {
+        let evo1 = await FetchData(data['chain']['evolves_to'][0]['species']['name']);
+        document.getElementById('evo1').classList.remove('invisible');
+        document.getElementById('evo1').src = evo1['sprites']['other']['official-artwork']['front_default'];
+        if (data['chain']['evolves_to'][0]['evolves_to'].length > 0) {
+            let evo2 = await FetchData(data['chain']['evolves_to'][0]['evolves_to'][0]['species']['name']);
+            document.getElementById('evo2').classList.remove('invisible');
+            document.getElementById('evo2').src = evo2['sprites']['other']['official-artwork']['front_default'];
+        } else document.getElementById('evo2').classList.add('invisible');
+    } else {
+        document.getElementById('evo1').classList.add('invisible');
+        document.getElementById('evo2').classList.add('invisible');
+    }
+}
+
+let Integrate = async function () {
+    let input = document.getElementById('find').value.toLowerCase();
+    let pokemon = await FetchData(input)
+
+    FetchName(pokemon);
+    FetchMoves(pokemon);
+    
+    FetchSprite(pokemon);
+    await FetchPrevolution(pokemon);
+    await FetchEvoChain(pokemon);
+ 
+}
+
 document.getElementById('run').addEventListener('click', async function () {
 
     let input = document.getElementById('find').value;
