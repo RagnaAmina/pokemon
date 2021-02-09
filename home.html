@@ -20,20 +20,41 @@
       </div>
 
 
-
+    <div class="search">
       <input type="text" id="find" name="find">
-      <button type="button" id="run">Who's this pokemon?</button>
-      <img id="pokemon_picture" alt="pokemon_picture" src="">
-      <img id="prevolution_picture" alt="prevolution_picture" src="">  
-
-<img class="pokedex" src="/images/pokedex.png" alt="original">
+      <button type="button" id="run"  class="btn btn-dark">Who's this pokemon?</button>
     
-<footer>
-   <p>@ Copyright </p>
-   <p> Becode students 
-       Thomas & Amina
-   </p>
-</footer>
+    </div>
+
+    <div id="bigcard" style="border: black solid; width: 30rem;">
+    <div class="card text-white bg-dark mb-3" style="width: 18rem;" id = "card">
+      
+      <img id="pokemon_picture" alt="" src="">
+     
+       <p id= "location"></p>
+      <div class="card-body">
+        <p class="card-text"></p>
+      </div>
+
+    
+    </div>
+    
+      <div id= "next card" >
+        <h5 class="card-title">Moves</h5>
+        <p id= "moves" ></p>
+        <h5 class="card-title">Evolution</h5>
+        <p id= "name"></p>
+       <img id="prevolution_picture" class="evoulution" alt="" src=""> 
+
+
+      </div>
+
+
+    </div>
+
+
+
+
 
 
 <script src="pokemon.js"></script>

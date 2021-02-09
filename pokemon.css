@@ -1,6 +1,7 @@
 body {
 
-    background-color: grey;
+    background-color: #ffffff;
+    
 }
 
 /*logo*/
@@ -69,6 +70,8 @@ body {
   }
   
 
+
+
   /* Form wrapper styling */
 .form-wrapper {
     width: 450px;
@@ -80,55 +83,57 @@ body {
     box-shadow: 0 1px 1px rgba(0,0,0,.4) inset, 0 1px 0 rgba(255,255,255,.2);
 }
 
-/* searchbar */
-
 
 /* Form text input */
 
-.form-wrapper input {
-    width: 330px;
-    height: 20px;
-    padding: 10px 5px;
-    float: left;    
-    font: bold 15px 'lucida sans', 'trebuchet MS', 'Tahoma';
-    border: 0;
-    background: #eee;
-    border-radius: 3px 0 0 3px;      
-}
-
-.form-wrapper input:focus {
-    outline: 0;
-    background: #fff;
-    box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
-}
-
-.form-wrapper input::-webkit-input-placeholder {
-   color: #999;
-   font-weight: normal;
-   font-style: italic;
-}
-
-.form-wrapper input:-moz-placeholder {
-    color: #999;
-    font-weight: normal;
-    font-style: italic;
-}
-
-.form-wrapper input:-ms-input-placeholder {
-    color: #999;
-    font-weight: normal;
-    font-style: italic;
-}    
+   
 
 /* pokedex */
 
-.pokedex {
+.search {
    
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 50%;
+  padding-top: 20px;
+  justify-content: center;
 }
+
+.bigcard {
+  margin: 0 auto;
+width: 100%;
+text-align: center;
+margin-top: 20px;
+}
+
+.card-title {
+  padding: 20px;
+}
+/* card */
+
+#card {
+  height: 350px;
+  width: 250px;
+  background-color: white;
+  text-align: center;
+  
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-shadow: 0px 5px 25px #aaa;
+  border-radius: 10px;
+  display: flex;
+
+  height:380px;
+  background-color: lightblue;
+  margin: 10px auto;
+  position: relative;
+ 
+
+
+
+}
+
 
 /* Form submit button */
 .form-wrapper button {
@@ -182,15 +187,3 @@ body {
     padding: 0;
 }    
 
-/*footer*/
-
-footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: #f7f7f7;
-  color: black;
-  text-align: center;
-  }
-  

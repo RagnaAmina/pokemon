@@ -16,7 +16,9 @@ let FetchMoves = function (pokemon) {
 
         if ([...new Set(move_set)].length === 1) console.log([...new Set(move_set)]);
         else console.log(move_set);
+        return move_set;
     } catch {console.log('Error: no moves listed')}
+    
 
 }
 let FetchSprite = function (pokemon) {
@@ -42,10 +44,14 @@ document.getElementById('run').addEventListener('click', async function () {
     let pokemon = await FetchData(input)
 
 
-    console.log(pokemon['id'])
-    FetchMoves(pokemon);
+    document.getElementById('location').innerText = pokemon['id'];
+    
+
+   let move_set =   FetchMoves(pokemon);
     FetchSprite(pokemon);
     await FetchPrevolution(pokemon)
+    document.getElementById('moves').innerText = move_set;
+    document.getElementById ('name').innerText = pokemon ['name'];
 
 })
 
